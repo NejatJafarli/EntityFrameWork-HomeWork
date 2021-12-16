@@ -37,8 +37,8 @@ namespace EntityFrameWork_HomeWork
             //Products.Insert(new Product { Name = "BMW F30", CategoryId=1, Price = 15000 });
             //Products.Insert(new Product { Name = "BMW F10", CategoryId=1, Price = 12000 });
 
-            CategoryDG.ItemsSource = Categories.GetAll().ToList();
-            ProductDG.ItemsSource = Products.GetAll().ToList();
+            CategoryDG.ItemsSource = Categories.GetAll().Select(x => new {x.Id,x.Name}).ToList();
+            ProductDG.ItemsSource = Products.GetAll().Select(x => new {x.Id,x.Name,x.Price,x.CategoryId}).ToList();
 
 
             CatDelBtn.IsEnabled = false;
@@ -69,6 +69,7 @@ namespace EntityFrameWork_HomeWork
             {
                 CatEditBtn.IsEnabled = true;
                 CatDelBtn.IsEnabled = true;
+                ProductDG.SelectedItem = null;
             }
             else
             {
@@ -91,6 +92,7 @@ namespace EntityFrameWork_HomeWork
             {
                 ProdEditBtn.IsEnabled = true;
                 ProdDelBtn.IsEnabled = true;
+                CategoryDG.SelectedItem = null;
             }
             else
             {

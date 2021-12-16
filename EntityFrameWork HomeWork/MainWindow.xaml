@@ -1,0 +1,41 @@
+﻿<Window x:Class="EntityFrameWork_HomeWork.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EntityFrameWork_HomeWork"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3.5*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <DataGrid CanUserAddRows="False" SelectionChanged="CategoryDG_SelectionChanged" Margin="5" Name="CategoryDG"></DataGrid>
+        <DataGrid CanUserAddRows="False"  SelectionChanged="ProductDG_SelectionChanged" Margin="5" Name="ProductDG" Grid.Column="1"></DataGrid>
+        <Grid Grid.Column="0" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Click="CatAddBtn_Click" Name="CatAddBtn" Margin="5" Grid.Row="0">Add Category</Button>
+            <Button Click="CatEditBtn_Click" Name="CatEditBtn" Margin="5" Grid.Row="1">Edit Category</Button>
+            <Button Click="CatDelBtn_Click" Name="CatDelBtn" Margin="5" Grid.Row="2">Delete Category</Button>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Click="ProdAddBtn_Click" Name="ProdAddBtn" Margin="5" Grid.Row="0">Add Product</Button>
+            <Button  Click="ProdEditBtn_Click" Name="ProdEditBtn" Margin="5" Grid.Row="1">Edit Product</Button>
+            <Button Click="ProdDelBtn_Click" Name="ProdDelBtn" Margin="5" Grid.Row="2">Delete Product</Button>
+        </Grid>
+    </Grid>
+</Window>

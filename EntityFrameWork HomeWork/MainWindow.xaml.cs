@@ -29,15 +29,18 @@ namespace EntityFrameWork_HomeWork
         public MainWindow()
         {
             InitializeComponent();
-            CategoryDG.ItemsSource = Categories.GetAll().ToList();
-            ProductDG.ItemsSource = Products.GetAll().ToList();
 
-
-
+            // Data Elave etmek istesez Hazir data
+            //Categories.Insert(new Category { Name = "Cars" });
             //Products.Insert(new Product { Name = "BMW E60", CategoryId=1, Price = 10000 });
             //Products.Insert(new Product { Name = "Mercedes MayBach", CategoryId=1, Price = 25000 });
             //Products.Insert(new Product { Name = "BMW F30", CategoryId=1, Price = 15000 });
             //Products.Insert(new Product { Name = "BMW F10", CategoryId=1, Price = 12000 });
+
+            CategoryDG.ItemsSource = Categories.GetAll().ToList();
+            ProductDG.ItemsSource = Products.GetAll().ToList();
+
+
             CatDelBtn.IsEnabled = false;
             CatEditBtn.IsEnabled = false;
             ProdDelBtn.IsEnabled = false;
